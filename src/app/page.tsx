@@ -3,10 +3,9 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div className= {styles.container}>
+      <main >
         <Image
-          className={styles.logo}
           src="/next.svg"
           alt="Next.js logo"
           width={180}
@@ -19,16 +18,17 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
-
-        <div className={styles.ctas}>
+        <div className={`${styles.box} ${styles.bgDark} ${styles.fgLight}`}>a</div>
+        <div className={styles.box}>b</div>
+        <div className={styles.box}>c</div>
+        <div className={`${styles.box} ${styles.exampleComponent} ${styles.fgWhite}`}>d</div>
+        <div>
           <a
-            className={styles.primary}
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image
-              className={styles.logo}
               src="/vercel.svg"
               alt="Vercel logomark"
               width={20}
@@ -40,7 +40,6 @@ export default function Home() {
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.secondary}
           >
             Read our docs
           </a>

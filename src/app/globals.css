@@ -20,7 +20,7 @@ body{
           --ff_serif: var(--font-bellefair), serif;
           --ff_sans_cond: var(--font-barlow-condensed), sans-serif;
           --ff_sans_normal:var(--font-barlow), sans-serif;
-  background-color:hsl(var(--clr-dark)); 
+  background-color:hsl( var(--clr-dark)); 
   color: hsl( var(--clr-white) );
   font-family: var(--ff_serif);
   font-size: var(--fs-400)

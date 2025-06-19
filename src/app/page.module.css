@@ -14,10 +14,46 @@
     display: grid;
     gap: var(--gap, 1rem);
   }
+
+  .d_block {
+    display: block;
+}
+
   .container {
     padding-inline: 2em;
     margin-inline: auto;
-    max-width: 1200px;
+    max-width: 80rem;
+  }
+
+  .grid_container {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding-inline: 1rem;
+  }
+
+  .grid_container > *{
+    max-width: 50ch;
+  }
+
+  @media (min-width: 45em) {
+      .grid_container {
+        text-align: left;
+          column-gap: var(--container-gap, 2rem);
+          grid-template-columns: minmax(2rem, 1fr) minmax(0, 40rem) minmax(0, 40rem) minmax(2rem, 1fr);
+      }
+
+      .grid_container > *:first-child {
+          grid-column: 2;
+      }
+
+      .grid_container > *:last-child {
+          grid-column: 3;
+      }
+      .grid_container__home {
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
+    }
   }
 
   .sr_only {
@@ -31,6 +67,7 @@
     white-space: nowrap; /* added line */
     border: 0;
   }
+
   .box{background: lightblue; padding: 1rem; border: solid 1px;}
 
   /* ------------------- */
@@ -108,7 +145,8 @@
 
 .large_button {
     position:relative;
-    display: grid;
+    font-size: 2rem;;
+    display: inline-grid;
     z-index:1;
     place-items: center;
     padding: 0 2em;
@@ -214,4 +252,34 @@
     background-color: hsl( var(--clr-white)/1);
     color: hsl( var(--clr-dark) / 1);
     border: solid 2px hsl( var(--clr-white));
+}
+
+/* ----------------------------- */
+/* Page specific background      */
+/* ----------------------------- */
+
+/* home */
+.home {
+    position: fixed; /* Stick to viewport */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('/assets/home/background-home-mobile.jpg');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Put it behind everything */
+}
+
+@media (min-width: 35em) {
+    .home {
+        background-image: url(/assets/home/background-home-tablet.jpg);
+    }
+}
+
+@media (min-width: 45em) {
+    .home {
+        background-image: url(/assets/home/background-home-desktop.jpg);
+    }
 }

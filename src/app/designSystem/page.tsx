@@ -151,7 +151,7 @@ export default function DesignSystem() {
               </div>
               <div>
                 <p className={`${styles.fgLight}`}>Body Text</p>
-                <p className={`${styles.fgWhite} ${styles.sansCond}`}>
+                <p className={`${styles.fgWhite} ${styles.sansCond} ${styles.fs_400}`}>
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                   Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In
                   nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed

@@ -5,14 +5,36 @@
   --clr-light: 231 77% 90%;
   --clr-white: 0 0% 100%;
       /* font-sizes divid pixel size by 16 */
-      --fs-900: 9.375rem;
-      --fs-800: 6.25rem;
-      --fs-700: 3.5rem;
-      --fs-600: 2rem;
-      --fs-500: 1.75rem;
-      --fs-400: 1.125rem;
-      --fs-300: 1rem;
-      --fs-200: 0.875rem;
+ /* font-sizes for smallest */
+ --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+ --fs-800: 3.5rem;
+ --fs-700: 1.5rem;
+ --fs-600: 1rem;
+ --fs-500: 1.75rem;
+ --fs-400: 0.9375rem;
+ --fs-300: 1rem;
+ --fs-200: 0.875rem;
+  }
+
+  @media (min-width: 35em) {
+    :root {
+          /* font-sizes divid pixel size by 16 */
+          --fs-900: 9.375rem;
+          --fs-800: 5rem;
+          --fs-700: 2.5rem;
+          --fs-600: 1.5rem;
+          --fs-400: 1rem;
+    }
+  }
+
+  @media (min-width: 45em) {
+    :root {
+          /* font-sizes divid pixel size by 16. only keep the ones that are not yet defined */
+          --fs-800: 6.25rem;
+          --fs-700: 3.5rem;
+          --fs-600: 2rem;
+          --fs-400: 1.125rem;
+    }
   }
 
 body{
@@ -20,10 +42,14 @@ body{
           --ff_serif: var(--font-bellefair), serif;
           --ff_sans_cond: var(--font-barlow-condensed), sans-serif;
           --ff_sans_normal:var(--font-barlow), sans-serif;
-  background-color:hsl( var(--clr-dark)); 
-  color: hsl( var(--clr-white) );
-  font-family: var(--ff_serif);
-  font-size: var(--fs-400)
+          font-family: var(--ff-sans-normal);
+          font-size: var(--fs-400);
+          color: hsl( var(--clr-white) );
+          background-color: hsl( var(--clr-dark) );
+          line-height: 1.5;
+          min-height: 100vh;        
+          display: grid;
+          grid-template-rows: min-content 1fr;
 }
 
 /*this is the lobotomised owl it allows padding around all the sibling elements except the first*/
@@ -63,7 +89,6 @@ p {
     font-weight: 400;
 }
 
-body{line-height:1.5; min-height:100vh;}
 img, picture{
   max-width: 100%;
   display: block;
@@ -90,3 +115,10 @@ select {
   }
 }
 
+/* ----------------------------- */
+/* Page specific background      */
+/* ----------------------------- */
+body {
+  background-size: cover;
+  background-position: bottom center;
+}

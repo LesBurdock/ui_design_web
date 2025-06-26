@@ -42,7 +42,7 @@ body{
           --ff_serif: var(--font-bellefair), serif;
           --ff_sans_cond: var(--font-barlow-condensed), sans-serif;
           --ff_sans_normal:var(--font-barlow), sans-serif;
-          font-family: var(--ff-sans-normal);
+          font-family: var(--ff_sans_normal);
           font-size: var(--fs-400);
           color: hsl( var(--clr-white) );
           background-color: hsl( var(--clr-dark) );
@@ -50,6 +50,7 @@ body{
           min-height: 100vh;        
           display: grid;
           grid-template-rows: min-content 1fr;
+          overflow-x:hidden
 }
 
 /*this is the lobotomised owl it allows padding around all the sibling elements except the first*/

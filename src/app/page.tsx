@@ -1,60 +1,16 @@
 import styles from "./page.module.css";
-import Image from "next/image";
 import "./globals.css";
+import NavButton from '@/components/mobile_nav.js';
 
 export default function Home() {
   return (
     <>
     <div className={styles.home}></div>
-      <div >
+      <div>
         <header className={`${styles.primary_header} ${styles.flex}`}>
-          {/* <div>
-            <Image
-              src="./assets/shared/logo.svg"
-              alt="space tourism logo"
-              className={styles.logo}
-              width={100}
-              height={100}
-            />
-          </div> */}
-          {/* <nav>
-            <ul
-              className={`${styles.primary_navigation} ${styles.underline_indicators} ${styles.flex}`}
-            >
-              <li className={styles.active}>
-                <a
-                  className={`${styles.fgWhite} ${styles.sansCond} ${styles.uppercase} ${styles.letter_spacing_2} `}
-                  href="#"
-                >
-                  <span>00</span>Home
-                </a>
-              </li>
-              <li>
-                <a
-                  className={`${styles.fgWhite} ${styles.sansCond} ${styles.uppercase} ${styles.letter_spacing_2} `}
-                  href="#"
-                >
-                  <span>01</span>Destination
-                </a>
-              </li>
-              <li>
-                <a
-                  className={`${styles.fgWhite} ${styles.sansCond} ${styles.uppercase} ${styles.letter_spacing_2} `}
-                  href="#"
-                >
-                  <span>02</span>Crew
-                </a>
-              </li>
-              <li>
-                <a
-                  className={`${styles.fgWhite} ${styles.sansCond} ${styles.uppercase} ${styles.letter_spacing_2} `}
-                  href="#"
-                >
-                  <span>03</span>Technology
-                </a>
-              </li>
-            </ul>
-          </nav> */}
+          <div className={styles.logo}>
+          </div>
+          <NavButton></NavButton>
         </header>
       </div>
       <div className={`${styles.grid_container} ${styles.grid_container__home}`}>

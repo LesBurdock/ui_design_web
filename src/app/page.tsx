@@ -6,14 +6,9 @@ export default function Home() {
   return (
     <>
     <div className={styles.home}></div>
-      <div>
-        <header className={`${styles.primary_header} ${styles.flex}`}>
-          <div className={styles.logo}>
-          </div>
-          <NavButton></NavButton>
-        </header>
-      </div>
-      <div className={`${styles.grid_container} ${styles.grid_container__home}`}>
+    <NavButton></NavButton>
+
+      <main className={`${styles.grid_container} ${styles.grid_container__home}`}>
         <div>
         <h1
           className={`${styles.fs_500} ${styles.uppercase} ${styles.fgLight} ${styles.letter_spacing_1} ${styles.sansCond}`}
@@ -41,7 +36,7 @@ export default function Home() {
             Explore
           </a>
         </div>
-      </div>
+      </main>
     </>
   );
 }

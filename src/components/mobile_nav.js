@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import React, { useState } from "react";
 import styles from "../app/page.module.css";
 
@@ -31,20 +32,16 @@ export default function NavButton() {
           className={`${styles.primary_navigation} ${styles.underline_indicators} ${styles.flex}`}
         >
           <li className={styles.active}>
-            <a
-              className={`${styles.fgWhite} ${styles.sansCond} ${styles.uppercase} ${styles.letter_spacing_2} `}
-              href="#"
-            >
+            <Link href="/" passHref 
+              className={`${styles.fgWhite} ${styles.sansCond} ${styles.uppercase} ${styles.letter_spacing_2} `}>
               <span aria-hidden="true">00</span>Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              className={`${styles.fgWhite} ${styles.sansCond} ${styles.uppercase} ${styles.letter_spacing_2} `}
-              href="#"
-            >
+          <Link href="/destinations" passHref
+              className={`${styles.fgWhite} ${styles.sansCond} ${styles.uppercase} ${styles.letter_spacing_2} `}>
               <span aria-hidden="true">01</span>Destination
-            </a>
+            </Link>
           </li>
           <li>
             <a

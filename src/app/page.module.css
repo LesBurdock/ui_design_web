@@ -265,7 +265,7 @@
 
 .underline_indicators > * {
     cursor: pointer;
-    padding: var(--underline_gap, 1rem) 0;
+    padding: var(--underline_gap, 1rem) 0rem;
     border: 0;
     border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
 }
@@ -300,6 +300,7 @@ nav .underline_indicators > [aria-selected="true"] {
 } 
 
 .dot_indicators > * {
+    position:relative;
     cursor: pointer;
     padding: 0.5em;
     border: 0;
@@ -370,8 +371,63 @@ nav .underline_indicators > [aria-selected="true"] {
     }
 }
 
+/* destination */
+.destination {
+    position: fixed; /* Stick to viewport */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/assets/destination/background-destination-mobile.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Put it behind everything */
+}
+
+@media (min-width: 35rem) {
+    .destination {
+        background-position: center center;
+        background-image: url(/assets/destination/background-destination-tablet.jpg);
+    }
+}
+
+@media (min-width: 45rem) {
+    .destination {
+        background-image: url(/assets/destination/background-destination-desktop.jpg);
+    }
+} 
+
+/* crew */
+.crew {
+    position: fixed; /* Stick to viewport */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/assets/crew/background-crew-mobile.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Put it behind everything */
+}
+
+@media (min-width: 35rem) {
+    .crew {
+        background-position: center center;
+        background-image: url(/assets/crew/background-crew-tablet.jpg);
+    }
+}
+
+@media (min-width: 45rem) {
+    .crew {
+        background-image: url(/assets/crew/background-crew-desktop.jpg);
+       
+    }
+} 
+
 /* ----------------------------- */
-/* Layout        */
+/*Layout        */
 /* ----------------------------- */
 .grid_container {
     display: grid;
@@ -381,7 +437,7 @@ nav .underline_indicators > [aria-selected="true"] {
     padding-bottom: 4rem;
   }
 
-  .grid_container > *{
+  .grid-container p:not([class]) {
     max-width: 50ch;
   }
 
@@ -440,6 +496,7 @@ nav .underline_indicators > [aria-selected="true"] {
 .destination-meta p {
     font-size: 1.75rem;
 }
+
   @media (min-width: 45em) {
       .grid_container {
         text-align: left;
@@ -473,8 +530,84 @@ nav .underline_indicators > [aria-selected="true"] {
     }
 
     .destination_meta {
-        --gap:6rem;
+        --gap: min(6vw, 6rem);
         justify-content: start;
 
     }
+    .tab_group {
+        display: flex;
+        justify-content: center; /* Or space-between, or flex-start */
+        gap: 1rem; /* Adds space between each button/tab */
+    }
   }
+
+    /* crew layout */
+    .crew_role{
+
+        color: hsl( var(--clr-white) / .5);
+    }
+
+    .grid_container__crew{
+        min-height: 100vh;
+        padding-bottom:0;
+        --flow-space: 2rem;
+        grid-template-areas: 
+            'title'
+            'image'
+            'tabs'
+            'content';
+            align-items:start;
+    }
+    
+    .grid_container__crew .crew_image_wrapper {
+        grid-area: image;
+        position:relative;
+        width: 400px;      /* or max-width: 60%; or a responsive value */
+        height: 400px;     /* controls image height */
+        margin: 1rem auto; 
+        border-bottom: 0;
+        align-self:end;   /* center if needed */
+        border-bottom: 1px solid hsl( var(--clr-white) / .1);
+    }
+    
+    .grid_container__crew > .tab_group {
+        grid-area: tabs;
+    }
+    
+    .grid_container__crew > .crew_info {
+        grid-area: content;
+    }
+
+    @media (min-width: 35em) and (max-width: 44.999em) {
+        .grid_container__crew {
+            align-content: center;
+            justify-items:center;
+            grid-template-areas: 
+                'title'
+                'content'
+                'tabs'
+                'image';
+        }
+      }
+
+  @media (min-width: 45em) {
+    .grid_container__crew {
+        justify-items:start;
+        grid-template-areas: 
+            '. title title .'
+            '. content image .'
+            '. tabs image .';
+    }
+
+    .grid_container__crew .crew_image_wrapper {
+        grid-area: image;
+        width: 600px;      /* or max-width: 60%; or a responsive value */
+        height: 600px;  
+        position:relative;
+        bottom:0;
+        max-width: 100%;
+        border-bottom: 0;
+        align-self:end;
+    }
+  }
+

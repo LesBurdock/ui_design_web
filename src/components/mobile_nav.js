@@ -44,12 +44,10 @@ export default function NavButton() {
             </Link>
           </li>
           <li>
-            <a
-              className={`${styles.fgWhite} ${styles.sansCond} ${styles.uppercase} ${styles.letter_spacing_2} `}
-              href="#"
-            >
+          <Link href="/crew" passHref
+              className={`${styles.fgWhite} ${styles.sansCond} ${styles.uppercase} ${styles.letter_spacing_2} `}>
               <span aria-hidden="true">02</span>Crew
-            </a>
+            </Link>
           </li>
           <li>
             <a

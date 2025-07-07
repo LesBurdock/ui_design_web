@@ -11,7 +11,7 @@ export default function DestinationsPage() {
   const destinations = data.destinations;
   const activeDestination = destinations[activeIndex];
   return (
-    <div className="p-4">
+    <div className={`${styles.destination}`}>
       <NavButton />
       <main
         className={`flow ${styles.grid_container} ${styles.grid_container__destination}`}

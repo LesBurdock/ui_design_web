@@ -11,20 +11,20 @@ export default function CrewPage() {
   const crew = data.crew;
   const activeCrew = crew[activeIndex];
   return (
-    <div className="p-4">
+    <div className={`${styles.crew}`}>
       <NavButton />
       <main
-        className={`flow ${styles.grid_container} ${styles.grid_container__destination}`}
+        className={`flow ${styles.grid_container} ${styles.grid_container__crew}`}
         style={{ "--flow_space": "2rem" }}
       >
         {/* Top-left: Page header */}
           <h1 className={`${styles.numbered_title}`}>
-            <span>01</span> PICK YOUR DESTINATION
+            <span>02</span> MEET YOUR CREW
           </h1>
         {/* Tab Buttons */}
         <div
           role="tablist"
-          className={`${styles.underline_indicators} ${styles.flex} ${styles.tab_group}`}
+          className={`${styles.flex} ${styles.dot_indicators} ${styles.tab_group}`}
         >
           {crew.map((crew, index) => (
             <button
@@ -33,23 +33,20 @@ export default function CrewPage() {
               role="tab"
               aria-selected={index === activeIndex ? "true" : "false"}
               className={`
-           ${styles.fgLight} 
-           ${styles.bgDark} 
-           ${styles.sansCond} 
-           ${styles.uppercase} 
-           ${styles.letter_spacing_2} 
+                ${styles.sr_only}
            ${index === activeIndex ? styles.active_tab : ""}
          `}
-            >
-              {crew.name}
+            ><span  className={`${styles.sr_only}`}
+                >{crew.name}</span>
             </button>
+
           ))}
         </div>
 
-        {/* Destination Content */}
-<div className={styles.destination_image_wrapper}>
+        {/* crew Content */}
+<div className={styles.crew_image_wrapper}>
           <Image
-          className={styles.destination_image}
+          className={styles.crew_image}
             src={activeCrew.images.png.replace("./assets", "/assets")}
             alt={activeCrew.name}
             fill
@@ -58,25 +55,20 @@ export default function CrewPage() {
             priority
           />
           </div>
-        <article className={`${styles.destination_info}`}>
+        <article className={`flow ${styles.crew_info}`} style={{ "--flow_space": "1.5rem" }}>
+        <div>
+              <h2
+                className={`${styles.letter_spacing_3} ${styles.uppercase} ${styles.crew_role}`}
+              >
+                  {activeCrew.role}
+              </h2>
+          </div>
           <h3
-            className={`${styles.fs_800} ${styles.uppercase} ${styles.fgWhite} ${styles.serif} ${styles.d_block}`}
+            className={`${styles.fs_700} ${styles.uppercase} ${styles.fgWhite} ${styles.serif}`}
           >
             {activeCrew.name}
           </h3>
           <p>{activeCrew.bio}</p>
-          <div className={`${styles.flex} ${styles.destination_meta}`}>
-            <div>
-              <h2
-                className={`${styles.fgLight} ${styles.uppercase} ${styles.fs_200}`}
-              >
-                Role:
-              </h2>
-              <p className={`${styles.fgWhite} ${styles.fs_500}`}>
-                {activeCrew.role}
-              </p>
-            </div>
-          </div>
         </article>
       </main>
     </div>

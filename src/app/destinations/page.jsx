@@ -4,15 +4,13 @@ import data from '../../../data/data.json';
 import { useState } from 'react';
 import Image from 'next/image';
 import styles from "../page.module.css";
-import NavButton from '@/components/mobile_nav.js';
+import "../globals.css";
 
 export default function DestinationsPage() {
     const [activeIndex, setActiveIndex] = useState(0);
   const destinations = data.destinations;
   const activeDestination = destinations[activeIndex];
   return (
-    <div className={`${styles.destination}`}>
-      <NavButton />
       <main
         className={`flow ${styles.grid_container} ${styles.grid_container__destination}`}
         style={{ "--flow_space": "2rem" }}
@@ -34,7 +32,7 @@ export default function DestinationsPage() {
               aria-selected={index === activeIndex ? "true" : "false"}
               className={`
            ${styles.fgLight} 
-           ${styles.bgDark} 
+           ${styles.bgTransparent} 
            ${styles.sansCond} 
            ${styles.uppercase} 
            ${styles.letter_spacing_2} 
@@ -89,6 +87,5 @@ export default function DestinationsPage() {
           </div>
         </article>
       </main>
-    </div>
   );
 }

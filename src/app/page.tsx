@@ -1,14 +1,11 @@
 import styles from "./page.module.css";
+import { CSSProperties } from 'react';
 import "./globals.css";
-import NavButton from '@/components/mobile_nav.js';
 
 export default function Home() {
   return (
     <>
-    <div className={styles.home}></div>
-    <NavButton></NavButton>
-
-      <main className={`${styles.grid_container} ${styles.grid_container__home}`}>
+      <main className={`flow ${styles.grid_container} ${styles.grid_container__home}`}  style={{ "--flow_space": "2rem" } as CSSProperties}>
         <div>
         <h1
           className={`${styles.fs_500} ${styles.uppercase} ${styles.fgLight} ${styles.letter_spacing_1} ${styles.sansCond}`}

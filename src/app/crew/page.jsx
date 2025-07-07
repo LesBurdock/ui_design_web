@@ -4,15 +4,13 @@ import data from '../../../data/data.json';
 import { useState } from 'react';
 import Image from 'next/image';
 import styles from "../page.module.css";
-import NavButton from '@/components/mobile_nav.js';
+import "../globals.css";
 
 export default function CrewPage() {
     const [activeIndex, setActiveIndex] = useState(0);
   const crew = data.crew;
   const activeCrew = crew[activeIndex];
   return (
-    <div className={`${styles.crew}`}>
-      <NavButton />
       <main
         className={`flow ${styles.grid_container} ${styles.grid_container__crew}`}
         style={{ "--flow_space": "2rem" }}
@@ -71,6 +69,5 @@ export default function CrewPage() {
           <p>{activeCrew.bio}</p>
         </article>
       </main>
-    </div>
   );
 }

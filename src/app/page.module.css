@@ -155,7 +155,7 @@
     margin:1.5rem  clamp(1.5rem, 5vw, 3.5rem);
 }
 
-@media (max-width: 35rem) {
+@media (max-width: 35em) {
 .mobile_nav_toggle{
     background-image: url("/assets/shared/icon-hamburger.svg");
     display: block;
@@ -239,7 +239,7 @@
     }
 }
 
-@media (max-width: 35rem) {
+@media (max-width: 35em) {
     .primary_navigation {
         --underline_gap: .5rem;
         position: fixed;
@@ -286,7 +286,7 @@
     border-color: hsl( var(--clr-white) / 1);
 }
 
- @media (max-width: 35rem) {
+ @media (max-width: 35em) {
 
  nav .underline_indicators > * {
         border-bottom: 0;

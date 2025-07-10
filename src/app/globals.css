@@ -21,7 +21,7 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   @media (min-width: 35em) {
     :root {
           /* font-sizes divid pixel size by 16 */
@@ -158,14 +158,14 @@ body.destination {
   z-index: -1; /* Put it behind everything */
 }
 
-@media (min-width: 35rem) {
+@media (min-width: 35em) {
  body.destination {
       background-position: center center;
       background-image: url(/assets/destination/background-destination-tablet.jpg);
   }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 45em) {
 body.destination {
       background-image: url(/assets/destination/background-destination-desktop.jpg);
   }
@@ -180,14 +180,14 @@ body.crew {
   z-index: -1; /* Put it behind everything */
 }
 
-@media (min-width: 35rem) {
+@media (min-width: 35em) {
   body.crew {
       background-position: center center;
       background-image: url(/assets/crew/background-crew-tablet.jpg);
   }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 45em) {
   body.crew {
       background-image: url(/assets/crew/background-crew-desktop.jpg);
      

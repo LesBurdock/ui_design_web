@@ -393,8 +393,8 @@ nav .underline_indicators > [aria-selected="true"] {
 
 .destination_image_wrapper {
     position: relative;
-    width: 400px;      /* or max-width: 60%; or a responsive value */
-    height: 400px;     /* controls image height */
+    width: 350px;      /* or max-width: 60%; or a responsive value */
+    height: 350px;     /* controls image height */
     margin: 0 auto;    /* center if needed */
   }
 
@@ -479,8 +479,8 @@ nav .underline_indicators > [aria-selected="true"] {
     .grid_container__crew .crew_image_wrapper {
         grid-area: image;
         position:relative;
-        width: 400px;      /* or max-width: 60%; or a responsive value */
-        height: 400px;     /* controls image height */
+        width: 350px;      /* or max-width: 60%; or a responsive value */
+        height: 350px;     /* controls image height */
         margin: 1rem auto; 
         border-bottom: 0;
         align-self:end;   /* center if needed */

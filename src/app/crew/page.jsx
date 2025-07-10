@@ -21,7 +21,7 @@ export default function CrewPage() {
 
   return (
       <main
-        className={`flow ${styles.grid_container} ${styles.grid_container__crew} ${styles.container}`}
+        className={`flow ${styles.grid_container} ${styles.grid_container__crew}`}
         style={{ "--flow_space": "2rem" }}
       >
         {/* Top-left: Page header */}

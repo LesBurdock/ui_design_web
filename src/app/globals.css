@@ -16,6 +16,12 @@
  --fs-200: 0.875rem;
   }
 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
   @media (min-width: 35em) {
     :root {
           /* font-sizes divid pixel size by 16 */

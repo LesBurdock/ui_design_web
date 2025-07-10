@@ -349,8 +349,8 @@ nav .underline_indicators > [aria-selected="true"] {
     display: grid;
     place-items: center;
     text-align: center;
-    padding-inline: 1rem;
     padding-bottom: 4rem;
+    /* padding-inline:1rem; */
   }
 
   .grid-container p:not([class]) {
@@ -416,6 +416,7 @@ nav .underline_indicators > [aria-selected="true"] {
   @media (min-width: 45em) {
       .grid_container {
         text-align: left;
+        padding-inline: 1rem;
           column-gap: var(--container-gap, 2rem);
           grid-template-columns: minmax(2rem, 1fr) minmax(0, 40rem) minmax(0, 40rem) minmax(2rem, 1fr);
       }

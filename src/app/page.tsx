@@ -5,7 +5,7 @@ import "./globals.css";
 export default function Home() {
   return (
     <>
-      <main className={`flow ${styles.grid_container} ${styles.grid_container__home}`}  style={{ "--flow_space": "2rem" } as CSSProperties}>
+      <main className={`flow ${styles.grid_container} ${styles.grid_container__home} ${styles.container}`}  style={{ "--flow_space": "2rem" } as CSSProperties}>
         <div>
         <h1
           className={`${styles.fs_500} ${styles.uppercase} ${styles.fgLight} ${styles.letter_spacing_1} ${styles.sansCond}`}

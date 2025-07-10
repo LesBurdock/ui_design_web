@@ -266,7 +266,7 @@
 
 .underline_indicators > * {
     cursor: pointer;
-    padding: var(--underline_gap, 1rem) 0rem;
+    padding: var(--underline_gap, .5rem) 0rem;
     border: 0;
     border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
 }
@@ -521,7 +521,7 @@ nav .underline_indicators > [aria-selected="true"] {
         height: 600px;  
         position:relative;
         bottom:0;
-        max-width: 100%;
+        max-width: 90%;
         border-bottom: 0;
         align-self:end;
     }

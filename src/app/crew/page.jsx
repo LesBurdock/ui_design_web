@@ -1,15 +1,24 @@
 'use client'; // This is a client component
 import data from '../../../data/data.json';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 import styles from "../page.module.css";
 import "../globals.css";
+import { handleArrowKeyNavigation } from '../../utils/handleArrowKeyNavigation.js';
 
 export default function CrewPage() {
     const [activeIndex, setActiveIndex] = useState(0);
   const crew = data.crew;
   const activeCrew = crew[activeIndex];
+  const tabRefs = useRef([]);
+
+ const handleKeyDown = (e) => {
+    const currentIndex = tabRefs.current.findIndex(ref => ref === document.activeElement);
+    handleArrowKeyNavigation(e, tabRefs, currentIndex, crew.length, setActiveIndex);
+  };
+
+
   return (
       <main
         className={`flow ${styles.grid_container} ${styles.grid_container__crew}`}
@@ -27,21 +36,23 @@ export default function CrewPage() {
           {crew.map((crew, index) => (
             <button
               key={index}
+              ref={(el) => tabRefs.current[index] = el}
+              tabIndex={index === activeIndex ? 0 : -1}  // only active tab is focusable by Tab
               onClick={() => setActiveIndex(index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
               role="tab"
               aria-selected={index === activeIndex ? "true" : "false"}
               className={`
-                ${styles.sr_only}
-           ${index === activeIndex ? styles.active_tab : ""}
+           ${index === activeIndex ? styles.active : ""}
          `}
-            ><span  className={`${styles.sr_only}`}
+            ><span className={`${styles.sr_only}`}
                 >{crew.name}</span>
             </button>
 
           ))}
         </div>
 
-        {/* crew Content */}
+        {/* crew Content */}        
 <div className={styles.crew_image_wrapper}>
           <Image
           className={styles.crew_image}
@@ -54,18 +65,18 @@ export default function CrewPage() {
           />
           </div>
         <article className={`flow ${styles.crew_info}`} style={{ "--flow_space": "1.5rem" }}>
-        <div>
+            <header>
               <h2
                 className={`${styles.letter_spacing_3} ${styles.uppercase} ${styles.crew_role}`}
               >
                   {activeCrew.role}
               </h2>
-          </div>
-          <h3
+          <p
             className={`${styles.fs_700} ${styles.uppercase} ${styles.fgWhite} ${styles.serif}`}
           >
             {activeCrew.name}
-          </h3>
+          </p>
+          </header>
           <p>{activeCrew.bio}</p>
         </article>
       </main>

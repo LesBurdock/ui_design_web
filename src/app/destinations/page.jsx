@@ -20,7 +20,7 @@ const tabRefs = useRef([]);
 
   return (
     <main
-      className={`flow ${styles.grid_container} ${styles.grid_container__destination}`}
+      className={`flow ${styles.grid_container} ${styles.grid_container__destination} ${styles.container}`}
       style={{ "--flow_space": "2rem" }}
     >
       {/* Top-left: Page header */}

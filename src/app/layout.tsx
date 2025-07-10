@@ -4,7 +4,6 @@ import { Barlow, Barlow_Condensed, Bellefair  } from "next/font/google";
 import Head from "next/head"; // ✅ import Head
 import "./globals.css";
 import NavButton from '@/components/mobile_nav.js';
-import styles from "./page.module.css";
 import { usePathname } from 'next/navigation';
 
 
@@ -49,7 +48,7 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <body className={`${bodyClass} ${barlowCondensed.variable} ${bellefair.variable} ${barlow.variable} ${styles.container}`}>
+      <body className={`${bodyClass} ${barlowCondensed.variable} ${bellefair.variable} ${barlow.variable}`}>
       <NavButton></NavButton>
         {children}
       </body>

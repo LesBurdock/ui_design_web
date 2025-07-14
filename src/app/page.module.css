@@ -350,6 +350,7 @@ nav .underline_indicators > [aria-selected="true"] {
     place-items: center;
     text-align: center;
     padding-bottom: 4rem;
+    padding-top:4rem;
     /* padding-inline:1rem; */
   }
 
@@ -447,7 +448,7 @@ nav .underline_indicators > [aria-selected="true"] {
         width: 600px;      /* or max-width: 60%; or a responsive value */
         height: 600px;  
         bottom:0;
-        max-width: 90%;
+        max-width: 80%;
     }
 
     .destination_meta {

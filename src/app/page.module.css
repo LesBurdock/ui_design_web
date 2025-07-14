@@ -351,7 +351,7 @@ nav .underline_indicators > [aria-selected="true"] {
     text-align: center;
     padding-bottom: 4rem;
     padding-top:4rem;
-    /* padding-inline:1rem; */
+padding-inline:1rem;
   }
 
   .grid-container p:not([class]) {
@@ -445,8 +445,8 @@ nav .underline_indicators > [aria-selected="true"] {
     }
 
     .grid_container__destination .destination_image_wrapper {
-        width: 600px;      /* or max-width: 60%; or a responsive value */
-        height: 600px;  
+        width: 550px;      /* or max-width: 60%; or a responsive value */
+        height: 550px;  
         bottom:0;
         max-width: 80%;
     }
@@ -523,8 +523,8 @@ nav .underline_indicators > [aria-selected="true"] {
     }
 
     .grid_container__crew .crew_image_wrapper {
-        width: 600px;      /* or max-width: 60%; or a responsive value */
-        height: 600px;  
+        width:550px;      /* or max-width: 60%; or a responsive value */
+        height: 550px;  
         bottom:0;
         max-width: 90%;
         border-bottom: 0;

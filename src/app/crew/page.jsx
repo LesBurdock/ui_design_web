@@ -65,7 +65,7 @@ export default function CrewPage() {
           />
           </div>
         <article className={`flow ${styles.crew_info}`} style={{ "--flow_space": "1.5rem" }}>
-            <header>
+            <header className={`flow`} style={{ "--flow_space": "1rem" }}>
               <h2
                 className={`${styles.letter_spacing_3} ${styles.uppercase} ${styles.crew_role}`}
               >
@@ -77,7 +77,7 @@ export default function CrewPage() {
             {activeCrew.name}
           </p>
           </header>
-          <p>{activeCrew.bio}</p>
+          <p className={`${styles.body_lineheight}`}>{activeCrew.bio}</p>
         </article>
       </main>
   );

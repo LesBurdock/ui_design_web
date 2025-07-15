@@ -73,7 +73,7 @@ const tabRefs = useRef([]);
         >
           {activeDestination.name}
         </h3>
-        <p>{activeDestination.description}</p>
+        <p className={`${styles.body_lineheight}`}>{activeDestination.description}</p>
         <div className={`${styles.flex} ${styles.destination_meta}`}>
           <div>
             <h2
@@ -81,7 +81,7 @@ const tabRefs = useRef([]);
             >
               Avg. Distance:
             </h2>
-            <p className={`${styles.fgWhite} ${styles.fs_500}`}>
+            <p className={`${styles.fgWhite} ${styles.fs_500}  ${styles.uppercase}`}>
               {activeDestination.distance}
             </p>
           </div>
@@ -91,7 +91,7 @@ const tabRefs = useRef([]);
             >
               Est. Travel Time:{" "}
             </h2>
-            <p className={`${styles.fgWhite} ${styles.fs_500}`}>
+            <p className={`${styles.fgWhite} ${styles.fs_500}  ${styles.uppercase}`}>
               {activeDestination.travel}
             </p>
           </div>

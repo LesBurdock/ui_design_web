@@ -41,6 +41,14 @@
 
   .box{background: lightblue; padding: 1rem; border: solid 1px;}
 
+  .body_lineheight{
+    line-height: 1.8;
+  }
+
+  .paddingtop{
+    padding-top: 2rem;
+  }
+
   /* ------------------- */
 /* Custom properties   */
 /* ------------------- */
@@ -144,6 +152,13 @@
 .large_button:focus::after {
     transform: scale(1.5);
     opacity:1;
+}
+
+@media (max-width: 35em) {
+    .large_button {
+        font-size: 1rem;
+        padding: 0 1em;
+    }
 }
 /* header and nav */
 .logo{
@@ -351,7 +366,7 @@ nav .underline_indicators > [aria-selected="true"] {
     text-align: center;
     padding-bottom: 4rem;
     padding-top:4rem;
-padding-inline:1rem;
+padding-inline:1.5rem;
   }
 
   .grid-container p:not([class]) {
@@ -361,6 +376,19 @@ padding-inline:1rem;
   .numbered_title {
     grid-area: title;
 }
+
+.grid_container__home{
+    --flow_space:8rem;
+    
+}
+
+@media(min-width:45em){
+    .grid_container__home{
+    --flow_space:2rem;
+    
+}
+}
+
   /* destination layout */
 
   .grid_container__destination {
@@ -484,7 +512,7 @@ padding-inline:1rem;
     .grid_container__crew .crew_image_wrapper {
         grid-area: image;
         position: relative;
-        width: 90vw;              /* Use viewport width */
+        width: 70vw;              /* Use viewport width */
         max-width: 350px;         /* Cap it at 350px */
         aspect-ratio: 1 / 1;      /* Maintain square shape */
         margin: 0 auto;
